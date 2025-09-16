@@ -19,7 +19,9 @@ GuessStreet is a platform where users make time-stamped, unchangeable prediction
   - http://www.linkedin.com/in/erman-pattuk-3040b62a
 
 ## Links
-* any documents that need linked: project description, meeting minutes, etc.
+* [Project description](ProjectDescription.md)
+* [Team meeting minutes](MeetingMinutes/Team)
+* [Client partner meeting minutes](MeetingMinutes/ClientPartner)
 
 ## Code Repositories
 * Repo 1
