@@ -77,8 +77,7 @@ class FeedItem {
 
 %% relatedEntityId is a UUID field that references the object that the feed item ActionType is related to
     %% PREDICTION_CREATED & PREDICTION_RESOLVED for example would contain the predictionId of the prediction
-    %% User-related ActionTypes would contain the userId
-    %% Trending and Random assets would contain the assetId
+    %% User-related ActionTypes contain the userId
 
 class ActionType {
     <<enumeration>>
@@ -87,8 +86,6 @@ class ActionType {
     USER_FOLLOWED
     USER_UNFOLLOWED
     ACCOUNT_CREATED
-    TRENDING_ASSET
-    RANDOM_ASSET
 }
 
 %% Inheritance (IS-A)
