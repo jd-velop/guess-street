@@ -8,18 +8,23 @@ This document describes the domain model of Guess Street. It shows the classes i
 classDiagram
 
 class RegularUser {
-    +userID : UUID
+    +userId : UUID
 }
 
 class AuthenticatedUser {
     +email : String
     +username : String
     +passwordHash : String
-    +isVerified : Boolean
+    +isEmailVerified : Boolean
+    +createdAt : DateTime
+    +lastLoginAt : DateTime
 }
 
 class Predictor {
     +credibilityScore : Float
+    +totalPredictions : Int
+    +correctPredictions : Int
+    +updateCredibilityScore() : void
 }
 
 class Admin {
@@ -35,11 +40,17 @@ class VerificationCode {
 class Prediction {
     +predictionId : UUID
     +assetId : String
+    +userId : UUID
     +minValue : Float
     +maxValue : Float
-    +targetDate : Date
+    +createdAt : DateTime
+    +targetDate : DateTime
+    resolvedAt : DateTime
     +status : String
     +actualValue : Float
+    +isCorrect : Boolean
+    +checkIfCorrect() : Boolean
+    +resolve(actualValue : float) : void
 }
 
 class Asset {
@@ -52,12 +63,32 @@ class Relationship {
     +relationshipId : UUID
     +followerId : UUID
     +followedId : UUID
+    +createdAt : DateTime
 }
 
 class FeedItem {
     +feedId : UUID
+    +userId : UUID
     +timestamp : DateTime
-    +actionType
+    +actionType : ActionType
+    +relatedEntityId : UUID
+    +description : String
+}
+
+%% relatedEntityId is a UUID field that references the object that the feed item ActionType is related to
+    %% PREDICTION_CREATED & PREDICTION_RESOLVED for example would contain the predictionId of the prediction
+    %% User-related ActionTypes would contain the userId
+    %% Trending and Random assets would contain the assetId
+
+class ActionType {
+    <<enumeration>>
+    PREDICTION_CREATED
+    PREDICTION_RESOLVED
+    USER_FOLLOWED
+    USER_UNFOLLOWED
+    ACCOUNT_CREATED
+    TRENDING_ASSET
+    RANDOM_ASSET
 }
 
 %% Inheritance (IS-A)
@@ -73,4 +104,6 @@ AuthenticatedUser "1" --> "*" Relationship : follows
 Relationship "*" --> "1" Predictor : followed
   %% 1 appears behind class
 Predictor "1" --> "*" FeedItem : creates
+FeedItem "*" --> "1" ActionType : has
 ```
+
