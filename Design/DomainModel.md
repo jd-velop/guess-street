@@ -103,7 +103,7 @@ Prediction "*" --> "1" Asset : about
 AuthenticatedUser "1" --> "*" Relationship : follows
 Relationship "*" --> "1" Predictor : followed
   %% 1 appears behind class
-Predictor "1" --> "*" FeedItem : creates
+AuthenticatedUser "1" --> "*" FeedItem : creates
 FeedItem "*" --> "1" ActionType : has
 ```
 
