@@ -22,6 +22,7 @@ GuessStreet is a platform where users make time-stamped, unchangeable prediction
 * [Project description](ProjectDescription.md)
 * [Team meeting minutes](MeetingMinutes/Team)
 * [Client partner meeting minutes](MeetingMinutes/ClientPartner)
+* [Trello Board](https://trello.com/invite/b/68c2ece44faab28dd260b6f5/ATTIc9470b7c986ce2ba8e5ab051c1059217C8079CFB/guess-street-capstone)
 
 ## Code Repositories
 * Repo 1
