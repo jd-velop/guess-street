@@ -18,9 +18,6 @@ class AuthenticatedUser {
     +isEmailVerified : Boolean
     +createdAt : DateTime
     +lastLoginAt : DateTime
-}
-
-class Predictor {
     +credibilityScore : Float
     +totalPredictions : Int
     +correctPredictions : Int
@@ -90,15 +87,14 @@ class ActionType {
 
 %% Inheritance (IS-A)
 RegularUser <|-- AuthenticatedUser
-AuthenticatedUser <|-- Predictor
 RegularUser <|-- Admin
 
 %% Relationships
 AuthenticatedUser "1" --> "*" VerificationCode : recieves
-Predictor "1" --> "*" Prediction : makes
+AuthenticatedUser "1" --> "*" Prediction : makes
 Prediction "*" --> "1" Asset : about
 AuthenticatedUser "1" --> "*" Relationship : follows
-Relationship "*" --> "1" Predictor : followed
+Relationship "*" --> "1" AuthenticatedUser : followed
   %% 1 appears behind class
 AuthenticatedUser "1" --> "*" FeedItem : creates
 FeedItem "*" --> "1" ActionType : has
@@ -110,10 +106,7 @@ FeedItem "*" --> "1" ActionType : has
 Represents the default user in the system with only the essential user ID. Serves as the parent class for all user types.
 
 ### AuthenticatedUser
-Represents a user who has completed the authentication process and can log into the system. Contains credentials, email verification status, and timestamps for creation and last login.
-
-### Predictor
-A specialized authenticated user who has made at least one prediction. Tracks performance metrics including credibility score, total predictions made, and accuracy statistics to build reputation on the platform over time.
+Represents a user who has completed the authentication process and can log into the system. Contains credentials, email verification status, and timestamps for creation and last login. Tracks prediction performance metrics including credibility score, total predictions made, and accuracy statistics to build reputation on the platform over time.
 
 ### Admin
 System administrator with permissions to manage the platform. Can perform system-level operations beyond regular user capabilities. 
