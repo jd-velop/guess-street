@@ -42,7 +42,7 @@ class Prediction {
     +maxValue : Float
     +createdAt : DateTime
     +targetDate : DateTime
-    resolvedAt : DateTime
+    +resolvedAt : DateTime
     +status : String
     +actualValue : Float
     +isCorrect : Boolean
