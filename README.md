@@ -7,7 +7,6 @@ GuessStreet is a platform where users make time-stamped, unchangeable prediction
 * Braxton Davis
 * Ryan Martinez
 * JD Otis
-* Christopher Silhavy
 * Elaine Ulsh
 
 ## Client Partner Information
