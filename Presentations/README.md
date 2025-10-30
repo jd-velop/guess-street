@@ -1,7 +1,7 @@
 # Presentations
-Presentations made will be placed here right after the presentation. The following is a list of presentations we must put together, visible in the syllabus on Canvas:
-* Design Presentation
-* First Iteration Presentation
+Presentations that have been or will be completed:
+* [Design Presentation](https://github.com/jd-velop/guess-street/blob/main/Presentations/Design%20Day.pdf)
+* [First Iteration Presentation](https://github.com/jd-velop/guess-street/blob/main/Presentations/Guess%20Street%20Iteration%201.pdf)
 * Second Iteration Presentation
 * Third Iteration Presentation
 * Fourth Iteration Presentation
