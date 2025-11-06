@@ -23,9 +23,8 @@ Elaine
 ## Things Clarified
 - Our code is relatively clean, but we need to go through and make sure that it is.
 - Thinking that UserPredictions should be a superclass and the parent class of ValidatedPredictions so that there aren't overlapping/repeated methods.
-- 
 
 ## Progress Made
 - Cloud database is closer to being able to be accessed without your specific IP address being the same every single time.
   - We're all creating Google Cloud accounts and then sending our emails to Ryan so that we can get this rolling.
-- UserPredictions is now a superclass and ValidatedPredictions is now a child class -- still making sure it works (lives in
+- UserPredictions is now a superclass and ValidatedPredictions is now a child class -- still making sure it works (lives in feature-clean-code branch since it's a work in progress).
